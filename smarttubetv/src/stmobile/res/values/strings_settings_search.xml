@@ -40,4 +40,5 @@
     <string name="mobile_settings_search_kw_gesture_brightness">gestures brightness</string>
     <string name="mobile_settings_search_kw_gesture_volume">gestures volume</string>
     <string name="mobile_settings_search_kw_gesture_seek">gestures scrub skip forward rewind</string>
+    <string name="mobile_settings_search_kw_speed_button">speed shortcut button controls player playback rate</string>
 </resources>

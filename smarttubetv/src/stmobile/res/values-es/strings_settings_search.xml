@@ -37,4 +37,5 @@
     <string name="mobile_settings_search_kw_gesture_brightness">gestos brillo</string>
     <string name="mobile_settings_search_kw_gesture_volume">gestos volumen</string>
     <string name="mobile_settings_search_kw_gesture_seek">gestos adelantar retroceder saltar</string>
+    <string name="mobile_settings_search_kw_speed_button">velocidad acceso directo botón controles reproductor reproducción</string>
 </resources>

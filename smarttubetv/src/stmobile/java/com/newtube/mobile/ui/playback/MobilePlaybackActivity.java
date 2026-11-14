@@ -208,6 +208,7 @@ public class MobilePlaybackActivity extends MobileActivity
     /** Previous / play-pause / next, and the top-right options: they step aside while scrubbing. */
     @Nullable private View mTransport;
     @Nullable private View mOptionsRow;
+    @Nullable private TextView mSpeedButton;
     /** Over the top of the video: "Release to cancel" (seek bar). */
     @Nullable private TextView mTopPill;
     /** NEWTUBE(gestures): brightness / volume while a side swipe sets it (SwipeLevels). */
@@ -695,6 +696,26 @@ public class MobilePlaybackActivity extends MobileActivity
         mBottomRow = findViewById(R.id.mobile_player_bottom_row);
         mTransport = findViewById(R.id.mobile_player_transport);
         mOptionsRow = findViewById(R.id.mobile_player_options);
+        mSpeedButton = findViewById(R.id.mobile_player_speed_button);
+        mSpeedButton.setAccessibilityDelegate(new View.AccessibilityDelegate() {
+            @Override
+            public void onInitializeAccessibilityNodeInfo(View host,
+                    android.view.accessibility.AccessibilityNodeInfo info) {
+                super.onInitializeAccessibilityNodeInfo(host, info);
+                info.setClassName(android.widget.Button.class.getName());
+            }
+        });
+        mSpeedButton.setOnClickListener(v -> showSpeedSheet());
+        updateSpeedButton();
+        mOptionsRow.addOnLayoutChangeListener((v, left, top, right, bottom,
+                oldLeft, oldTop, oldRight, oldBottom) -> {
+            // Reserve the measured width so the optional shortcut never covers the title.
+            int end = right - left + dp(4);
+            if (mTitleView.getPaddingEnd() != end) {
+                mTitleView.setPaddingRelative(mTitleView.getPaddingStart(), mTitleView.getPaddingTop(),
+                        end, mTitleView.getPaddingBottom());
+            }
+        });
         mTopPill = findViewById(R.id.mobile_player_top_pill);
         mLevelPill = findViewById(R.id.mobile_player_level_pill);
         mLevelIcon = findViewById(R.id.mobile_player_level_icon);
@@ -1455,6 +1476,7 @@ public class MobilePlaybackActivity extends MobileActivity
         SleepTimer.checkOverdue();
 
         PlayerTransitionBridge.LaunchSnapshot launch = PlayerTransitionBridge.take();
+        updateSpeedButton();
 
         mIsResumed = true;
         if (mControlsVisible && !isPlayerSheetShown()) {
@@ -3535,6 +3557,7 @@ public class MobilePlaybackActivity extends MobileActivity
         }
         mTimeBar.setShown(true, animate);
         updatePlayPauseIcon();
+        updateSpeedButton();
 
         // NEWTUBE(perf): drive the 500ms progress loop only while controls are visible. startProgress
         // ticks once immediately (refresh on show) then reschedules every 500ms.
@@ -8981,6 +9004,21 @@ public class MobilePlaybackActivity extends MobileActivity
     @Override
     public void setSpeed(float speed) {
         mExoPlayerController.setSpeed(speed);
+        runOnUiThread(this::updateSpeedButton);
+    }
+
+    private void updateSpeedButton() {
+        if (mSpeedButton == null) {
+            return;
+        }
+        mSpeedButton.setVisibility(PlayerControlsPrefs.isSpeedButtonEnabled(this) ? View.VISIBLE : View.GONE);
+        float speed = mExoPlayerController != null ? mExoPlayerController.getSpeed() : 1f;
+        if (speed <= 0f) {
+            speed = 1f;
+        }
+        String label = (speed == Math.floor(speed) ? String.valueOf((int) speed) : String.valueOf(speed)) + "x";
+        mSpeedButton.setText(label);
+        mSpeedButton.setContentDescription(getString(R.string.mobile_speed_button_description, label));
     }
 
     @Override

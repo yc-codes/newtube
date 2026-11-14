@@ -434,4 +434,7 @@
     <string name="mobile_sleep_timer_set_end_of_video">Temporizador configurado para el fin del vídeo</string>
     <string name="mobile_sleep_timer_turned_off">Temporizador de apagado desactivado</string>
     <string name="mobile_sleep_timer_paused">El temporizador de apagado ha pausado la reproducción</string>
+    <string name="mobile_settings_speed_button">Botón de velocidad en el reproductor</string>
+    <string name="mobile_settings_speed_button_summary">Muestra la velocidad actual y abre sus controles directamente desde el vídeo</string>
+    <string name="mobile_speed_button_description">Velocidad de reproducción: %1$s</string>
 </resources>

@@ -31,6 +31,7 @@ import com.liskovsoft.smartyoutubetv2.tv.R;
 import com.liskovsoft.youtubeapi.service.internal.MediaServiceData;
 import com.newtube.mobile.player.SabrSourcePreference;
 import com.newtube.mobile.ui.playback.PlayerGesturePrefs;
+import com.newtube.mobile.ui.playback.PlayerControlsPrefs;
 import com.newtube.mobile.ui.common.MobileSnackbar;
 
 import java.util.ArrayList;
@@ -112,6 +113,11 @@ final class PlayerPages {
                                     break;
                             }
                         }));
+
+        rows.add(SettingsRow.toggle(context.getString(R.string.mobile_settings_speed_button),
+                context.getString(R.string.mobile_settings_speed_button_summary),
+                () -> PlayerControlsPrefs.isSpeedButtonEnabled(context),
+                enabled -> PlayerControlsPrefs.setSpeedButtonEnabled(context, enabled)));
 
         rows.add(SettingsRow.<Integer>choice(context.getString(R.string.mobile_settings_speed_list))
                 .option(context.getString(R.string.mobile_settings_speed_list_basic), 0)

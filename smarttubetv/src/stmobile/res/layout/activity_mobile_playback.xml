@@ -117,8 +117,8 @@
                     android:tint="@color/mobile_player_on_video" />
 
                 <!-- paddingEnd must clear the full top-right options row (mobile_player_options):
-                     3 icon buttons * 48dp (no end margin) = 144dp. Otherwise the wrapped
-                     title runs under the leftmost option (cast) icon. -->
+                     The initial padding covers the standard buttons; bindViews updates it to
+                     the measured options width, including the optional speed shortcut. -->
                 <TextView
                     android:id="@+id/mobile_player_title"
                     android:layout_width="match_parent"
@@ -139,9 +139,7 @@
                     android:textStyle="bold"
                     tools:text="Video title goes here and may wrap onto a second line" />
 
-                <!-- Top-right player options, YouTube-style trio: Cast, Subtitles/CC, and the
-                     gear. Everything else (quality, speed, PiP, the long tail) lives one level
-                     down in the gear's bottom sheet (openPlayerMenu). -->
+                <!-- Player options; the speed shortcut can be hidden in Playback settings. -->
                 <LinearLayout
                     android:id="@+id/mobile_player_options"
                     android:layout_width="wrap_content"
@@ -150,6 +148,25 @@
                     android:layout_marginTop="4dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/mobile_player_speed_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/mobile_player_icon_button"
+                        android:minWidth="72dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:drawablePadding="4dp"
+                        android:textColor="@color/mobile_player_on_video"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:contentDescription="@string/mobile_player_speed"
+                        app:drawableStartCompat="@drawable/ic_player_speed"
+                        app:drawableTint="@color/mobile_player_on_video" />
 
                     <!-- Cast picker (casting wave): lists DIAL-discovered TVs + paired screens.
                          Route B only for now; see com.newtube.mobile.casting. -->

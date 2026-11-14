@@ -485,4 +485,7 @@
     <string name="mobile_sleep_timer_set_end_of_video">Sleep timer set for end of video</string>
     <string name="mobile_sleep_timer_turned_off">Sleep timer turned off</string>
     <string name="mobile_sleep_timer_paused">Sleep timer paused playback</string>
+    <string name="mobile_settings_speed_button">Speed button in player</string>
+    <string name="mobile_settings_speed_button_summary">Show the current speed and open speed controls directly from the video</string>
+    <string name="mobile_speed_button_description">Playback speed: %1$s</string>
 </resources>
