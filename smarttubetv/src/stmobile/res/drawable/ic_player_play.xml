@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Center play glyph for the custom touch player controls. -->
+<!-- Rounded companion to the YouTube Symbols navigation/player set. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="36dp"
-    android:height="36dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
-    <path
-        android:fillColor="#FFFFFFFF"
-        android:pathData="M8,5v14l11,-7z" />
+    android:width="36dp" android:height="36dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="#FFFFFFFF" android:fillType="evenOdd"
+        android:pathData="M7,18.8 L7,5.2 Q7,4 8.029,4.6174 L12.5,7.3 Q12.5,7.3 12.5,7.3 L12.5,16.7 Q12.5,16.7 12.5,16.7 L8.029,19.3826 Q7,20 7,18.8 Z M12.5,16.7 L12.5,7.3 Q12.5,7.3 12.5,7.3 L19.2722,11.3807 Q20.3,12 20.3,12 L20.3,12 Q20.3,12 19.2722,12.6193 L12.5,16.7 Q12.5,16.7 12.5,16.7 Z" />
 </vector>

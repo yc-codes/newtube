@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Downloads tab, selected: filled arrow (Material "download"). -->
+<!-- Rounded companion to the YouTube Symbols navigation/player set. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
-    <path
-        android:fillColor="@android:color/white"
-        android:pathData="M19,9h-4V3H9v6H5l7,7 7,-7zM5,18v2h14v-2H5z" />
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="@android:color/white" android:fillType="evenOdd"
+        android:pathData="M12,1A11,11 0,1 0,12 23A11,11 0,0 0,12 1Z M11,5H13V14.17L16.3,10.87L17.71,12.29L12,18L6.29,12.29L7.71,10.87L11,14.17Z" />
 </vector>

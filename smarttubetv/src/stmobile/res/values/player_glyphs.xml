@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- NEWTUBE(motion): the play and pause glyphs as morphable paths (avd_player_*): the same
-         shapes as ic_player_play / ic_player_pause, each as two four-point quads - the play
-         triangle split down x=13.5 - so every point has a partner in the other glyph. -->
-    <string name="path_player_play" translatable="false">M8,5 L13.5,8.5 L13.5,15.5 L8,19 Z M13.5,8.5 L19,12 L19,12 L13.5,15.5 Z</string>
-    <string name="path_player_pause" translatable="false">M6,5 L10,5 L10,19 L6,19 Z M14,5 L18,5 L18,19 L14,19 Z</string>
+         shapes as ic_player_play / ic_player_pause, each as two rounded four-corner paths - the
+         play triangle split down x=12.5 - so every point has a partner in the other glyph. -->
+    <string name="path_player_play" translatable="false">M7,18.8 L7,5.2 Q7,4 8.029,4.6174 L12.5,7.3 Q12.5,7.3 12.5,7.3 L12.5,16.7 Q12.5,16.7 12.5,16.7 L8.029,19.3826 Q7,20 7,18.8 Z M12.5,16.7 L12.5,7.3 Q12.5,7.3 12.5,7.3 L19.2722,11.3807 Q20.3,12 20.3,12 L20.3,12 Q20.3,12 19.2722,12.6193 L12.5,16.7 Q12.5,16.7 12.5,16.7 Z</string>
+    <string name="path_player_pause" translatable="false">M6,19 L6,5 Q6,4 7,4 L9,4 Q10,4 10,5 L10,19 Q10,20 9,20 L7,20 Q6,20 6,19 Z M14,19 L14,5 Q14,4 15,4 L17,4 Q18,4 18,5 L18,19 Q18,20 17,20 L15,20 Q14,20 14,19 Z</string>
     <integer name="mobile_player_glyph_morph_ms">200</integer>
 </resources>

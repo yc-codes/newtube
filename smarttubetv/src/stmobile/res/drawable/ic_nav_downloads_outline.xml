@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Downloads tab, idle: outlined tray with a down arrow (Material "download" outline). -->
+<!-- YouTube Symbols 2025; provenance in docs/design/ICONS.md. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
-    <path
-        android:fillColor="@android:color/white"
-        android:pathData="M19,9h-4V3H9v6H5l7,7 7,-7zM11,11V5h2v6h1.17L12,13.17 9.83,11H11zM5,18h14v2H5z" />
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <group android:translateX="-343" android:translateY="-120">
+        <path android:fillColor="@android:color/white"
+            android:pathData="M355 121C361.075 121 366 125.925 366 132C366 138.075 361.075 143 355 143C348.925 143 344 138.075 344 132C344 125.925 348.925 121 355 121ZM355 123C350.029 123 346 127.029 346 132C346 136.971 350.029 141 355 141C359.971 141 364 136.971 364 132C364 127.029 359.971 123 355 123ZM355 126C355.552 126 356 126.448 356 127V134.586L358.293 132.293C358.683 131.903 359.317 131.902 359.707 132.293C360.097 132.683 360.097 133.317 359.707 133.707L355 138.414L350.293 133.707C349.902 133.317 349.902 132.683 350.293 132.293C350.683 131.903 351.317 131.902 351.707 132.293L354 134.586V127C354 126.448 354.448 126 355 126Z" />
+    </group>
 </vector>
